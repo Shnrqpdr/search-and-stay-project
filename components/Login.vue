@@ -16,21 +16,34 @@
 </template>
   
 <script>
+import api from '../services/api';
+
 export default {
-    name: 'LoginPage',
-    data() {
-      return {
-        email: '',
-        password: '',
+  name: 'LoginComponent',
+  data() {
+    return {
+      email: '',
+      password: '',
+    };
+  },
+  methods: {
+    async onSubmit() {
+      const credentials = {
+        email: this.email,
+        password: this.password,
       };
+
+      try {
+        const { data } = await api.post('/login_json', { login: credentials })
+        localStorage.setItem('token', data.access_token);
+      } catch (error) {
+        alert('Ocorreu um erro ao tentar fazer login. Verifique suas credenciais e tente novamente.', error);
+      } finally {
+        this.$router.push('/Home');
+      }
     },
-    methods: {
-      onSubmit() {
-        // Aqui você pode adicionar a lógica para fazer a autenticação do usuário
-        console.log(`Email: ${this.email}, Password: ${this.password}`);
-      },
-    },
-  };
+  },
+};
 </script>
   
 <style lang="scss" scoped>

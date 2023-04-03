@@ -1,13 +1,14 @@
 <template>
-  <Login />
+  <div></div>
 </template>
 
 <script>
-import Login from '../components/Login.vue';
 
 export default {
-    name: "IndexPage",
-    components: { Login }
+  name: "IndexPage",
+  created(){
+    this.$router.push({name: 'Login'})
+  }
 }
 </script>
 <style lang="scss">
