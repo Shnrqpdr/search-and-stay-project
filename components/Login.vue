@@ -35,9 +35,9 @@ export default {
 
       try {
         const { data } = await api.post('/login_json', { login: credentials })
-        localStorage.setItem('token', data.access_token);
+        localStorage.setItem('token', data.data.result.access_token);
       } catch (error) {
-        alert('Ocorreu um erro ao tentar fazer login. Verifique suas credenciais e tente novamente.', error);
+        alert('Error at login.', error);
       } finally {
         this.$router.push('/Home');
       }
