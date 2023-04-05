@@ -1,10 +1,10 @@
 <template>
   <b-container class="pt-5">
     <b-row align-h="between" class="w-100 mr-0 ml-0">
-      <b-col>
+      <b-col cols="12" sm="8">
         <div class="title">House Rules Registration</div>
       </b-col>
-      <b-col cols="4" class="d-flex justify-content-end">
+      <b-col cols="12" sm="4" class="d-flex justify-content-end mt-2">
         <b-button variant="warning" class="button-crud">
           <div class="text-button">Cancel</div>
         </b-button>
@@ -24,7 +24,7 @@
         description="Please, be sure that you'll make the house a better place"
       >
       <b-row class="w-100 mx-0">
-        <b-col cols="8" class="pl-0">
+        <b-col cols="12" sm="8" class="px-0 pr-sm-2 mt-2">
           <b-form-input
             id="input-1"
             v-model="houseRules.name"
@@ -33,7 +33,7 @@
             required
           ></b-form-input>
         </b-col>
-        <b-col cols="4" class="pr-0">
+        <b-col cols="12" sm="4" class="px-0 mt-2">
           <b-form-select v-model="houseRules.active" :options="optionsActive"></b-form-select>
         </b-col>
       </b-row>
@@ -43,7 +43,7 @@
     <div class="separator"></div>
 
     <b-row>
-      <b-col v-for="(rule, index) in listHouseRules" :key="index" cols="4">
+      <b-col v-for="(rule, index) in listHouseRules" :key="index" cols="12" sm="6" md="4">
         <b-card
           border-variant="primary"
           :header="`Rule #${index +1}`"
@@ -179,7 +179,7 @@ export default {
   width: 200px;
 }
 .title {
-  font-size: 28px;
+  font-size: 26px;
   color: #303030;
   font-weight: 700;
 }

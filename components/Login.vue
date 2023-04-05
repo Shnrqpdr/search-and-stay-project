@@ -9,7 +9,7 @@
             <b-form-group id="password-group" label="Password:" label-for="password">
                 <b-form-input id="password" v-model="password" type="password" required></b-form-input>
             </b-form-group>
-            <b-button type="submit" variant="primary">Login</b-button>
+            <b-button type="submit" variant="primary" class="w-100 mt-1">Login</b-button>
         </b-form>
     </div>
   </div>
@@ -55,7 +55,7 @@ background-color: white;
 }
 
 .form-content {
-    width: 100%;
+  width: 100%;
 }
 </style>
 
